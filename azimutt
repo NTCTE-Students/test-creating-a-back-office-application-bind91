@@ -1,0 +1,47 @@
+user
+  id "bigint unsigned"
+  login varchar (200)
+  password varchar (300)
+  level int
+  client_id
+  inventory_id
+  finance_id
+  mail_id
+
+client
+  id "bigint unsigned"
+  login varhcar (200)
+  password int
+  oreder_history text
+  order_id
+
+order
+  id "bigint unsigned"
+  status text
+  sales int
+  profit int
+
+inventory
+  id "bigint unsigned"
+  product int
+  services text
+
+finance
+  id "bigint unsigned"
+  quantity int
+  debts int
+
+mail
+  id "bigint unsigned"
+  send_mail email
+  recipient_mail email
+
+
+
+
+fk user.client_id -> client.id
+fk user.inventory_id -> inventory.id
+fk user.finance_id -> finance.id
+fk client.oreder_id -> client.oreder_id
+fk client.order_id -> order.id
+fk user.mail_id -> mail.id
